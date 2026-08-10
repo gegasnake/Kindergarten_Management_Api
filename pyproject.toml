@@ -20,3 +20,8 @@ dev = [
     "pytest-django>=4.13.0",
     "ruff>=0.16.2",
 ]
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "config.settings"
+python_files = ["tests.py", "test_*.py", "*_tests.py"]
+addopts = "-ra"

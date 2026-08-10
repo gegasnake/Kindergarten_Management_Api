@@ -32,16 +32,17 @@ services:
     container_name: kindergarten_web
     restart: unless-stopped
 
-    command: python manage.py runserver 0.0.0.0:8000
+    command: uv run python manage.py runserver 0.0.0.0:8000
 
     volumes:
       - .:/app
+      - /app/.venv
 
     ports:
       - "8000:8000"
 
     environment:
-      DJANGO_SECRET_KEY: ${SECRET_KEY}
+      DJANGO_SECRET_KEY: $SECRET_KEY}
       DJANGO_DEBUG: ${DEBUG}
 
       POSTGRES_DB: ${POSTGRES_DB}

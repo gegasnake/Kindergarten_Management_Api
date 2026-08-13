@@ -25,3 +25,6 @@ dev = [
 DJANGO_SETTINGS_MODULE = "config.settings"
 python_files = ["tests.py", "test_*.py", "*_tests.py"]
 addopts = "-ra"
+
+[tool.ruff.lint.per-file-ignores]
+"config/settings/base.py" = ["F401"]

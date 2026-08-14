@@ -70,22 +70,19 @@ Test functions should describe the expected behavior.
 Prefer:
 
 ```python
-def test_resource_can_be_created():
-    ...
+def test_resource_can_be_created(): ...
 ```
 
 over:
 
 ```python
-def test_resource():
-    ...
+def test_resource(): ...
 ```
 
 Test class names should describe the component being tested:
 
 ```python
-class TestResourceAPI:
-    ...
+class TestResourceAPI: ...
 ```
 
 ---
@@ -99,8 +96,7 @@ import pytest
 
 
 @pytest.mark.django_db
-def test_example():
-    ...
+def test_example(): ...
 ```
 
 or an appropriate pytest fixture that enables database access.

@@ -9,6 +9,7 @@ env_list = [
     "format",
     "type",
     "django",
+    "docs",
 ]
 
 [env_run_base]
@@ -27,37 +28,20 @@ pass_env = [
     "POSTGRES_PORT",
 ]
 
-
 [env.tests]
-description = "Run pytest test suite"
-commands = [
-    ["pytest"],
-]
-
+commands = [["pytest"]]
 
 [env.lint]
-description = "Run Ruff lint checks"
-commands = [
-    ["ruff", "check", "."],
-]
-
+commands = [["ruff", "check", "."]]
 
 [env.format]
-description = "Validate Ruff formatting"
-commands = [
-    ["ruff", "format", "--check", "."],
-]
-
+commands = [["ruff", "format", "--check", "."]]
 
 [env.type]
-description = "Run mypy static type checks"
-commands = [
-    ["mypy"],
-]
-
+commands = [["mypy"]]
 
 [env.django]
-description = "Run Django system checks"
-commands = [
-    ["python", "manage.py", "check"],
-]
+commands = [["python", "manage.py", "check"]]
+
+[env.docs]
+commands = [["mkdocs", "build", "--strict"]]

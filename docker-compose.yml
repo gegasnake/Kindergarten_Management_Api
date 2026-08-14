@@ -40,6 +40,7 @@ services:
 
     ports:
       - "8000:8000"
+      - "8001:8001"
 
     environment:
       DJANGO_SECRET_KEY: ${SECRET_KEY}

@@ -17,3 +17,5 @@ staticfiles/
 .env
 
 plan.txt
+
+site/

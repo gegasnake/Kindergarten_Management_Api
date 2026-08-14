@@ -400,15 +400,13 @@ test_*.py
 Test functions should follow:
 
 ```python
-def test_expected_behavior():
-    ...
+def test_expected_behavior(): ...
 ```
 
 Test classes should follow:
 
 ```python
-class TestResourceAPI:
-    ...
+class TestResourceAPI: ...
 ```
 
 Shared pytest fixtures should be placed in:
@@ -458,8 +456,7 @@ import pytest
 
 
 @pytest.mark.django_db
-def test_example():
-    ...
+def test_example(): ...
 ```
 
 or an appropriate pytest/pytest-django database fixture.

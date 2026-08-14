@@ -21,6 +21,8 @@ dev = [
     "pytest>=9.1.1",
     "pytest-django>=4.13.0",
     "ruff>=0.16.2",
+    "tox>=4.60.0",
+    "tox-uv-bare>=1.36.0",
 ]
 
 [tool.pytest.ini_options]

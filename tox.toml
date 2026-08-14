@@ -1,0 +1,63 @@
+requires = [
+    "tox>=4.20",
+    "tox-uv-bare",
+]
+
+env_list = [
+    "tests",
+    "lint",
+    "format",
+    "type",
+    "django",
+]
+
+[env_run_base]
+runner = "uv-venv-lock-runner"
+dependency_groups = ["dev"]
+package = "skip"
+
+pass_env = [
+    "SECRET_KEY",
+    "DEBUG",
+    "DJANGO_ALLOWED_HOSTS",
+    "POSTGRES_DB",
+    "POSTGRES_USER",
+    "POSTGRES_PASSWORD",
+    "POSTGRES_HOST",
+    "POSTGRES_PORT",
+]
+
+
+[env.tests]
+description = "Run pytest test suite"
+commands = [
+    ["pytest"],
+]
+
+
+[env.lint]
+description = "Run Ruff lint checks"
+commands = [
+    ["ruff", "check", "."],
+]
+
+
+[env.format]
+description = "Validate Ruff formatting"
+commands = [
+    ["ruff", "format", "--check", "."],
+]
+
+
+[env.type]
+description = "Run mypy static type checks"
+commands = [
+    ["mypy"],
+]
+
+
+[env.django]
+description = "Run Django system checks"
+commands = [
+    ["python", "manage.py", "check"],
+]
